@@ -5,7 +5,7 @@
 
 <body>
    <%- include('../includes/navigation.ejs') %>
-<!-- https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png -->
+
     <main>
         <form class="product-form" action="/admin/<% if (editing) { %>edit-product<% } else { %>add-product<% } %>" method="POST">
             <div class="form-control">
@@ -22,11 +22,10 @@
             </div>
             <div class="form-control">
                 <label for="description">Description</label>
-                <textarea name="description" id="description" rows="5"> <% if (editing) { %><%= product.description %><% } %></textarea>
+                <textarea name="description" id="description" rows="5"><% if (editing) { %><%= product.description %><% } %></textarea>
             </div>
-
             <% if (editing) { %>
-                <input type="hidden" value="<%= product._id %>" name="productId">
+                <input type="hidden" value="<%= product.id %>" name="productId">
             <% } %>
 
             <button class="btn" type="submit"><% if (editing) { %>Update Product<% } else { %>Add Product<% } %></button>
