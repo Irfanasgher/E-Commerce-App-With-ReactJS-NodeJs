@@ -113,7 +113,6 @@ mongoose
   .connect(MONGODB_URI)
   .then((result) => {
     app.listen(8000);
-    console.log("Connected!");
   })
   .catch((err) => {
     console.log(err);
